@@ -49,25 +49,22 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @param int $page
+     * @param BlogPost $post
      * @return JsonResponse
      * @Route("/post/{id}", name="blog_by_id", requirements={"id"="\d+"}, methods={"GET"})
-     * @ParamConverter("post", class="App:BlogPost")
+     * @ParamConverter("post")
      */
-    public function post($post)
+    public function post(BlogPost $post)
     {
 
         // return new JsonResponse(
         // It's the same as doing find($id) on repository
-        return $this->json($post
-        );
+        return $this->json($post);
     }
 
 
-
-
     /**
-     * @param string $slug
+     * @param string $post
      * @return JsonResponse
      * @Route("/post/{slug}", name="blog_by_slug", methods={"GET"})
      * @ParamConverter("post", class="App:BlogPost", options={"mapping": {"slug": "slug"}})
@@ -110,7 +107,6 @@ class BlogController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->remove($post);
         $em->flush();
-
         return new JsonResponse(null, Response::HTTP_NO_CONTENT);
     }
 }
