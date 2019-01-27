@@ -36,7 +36,7 @@ class BlogController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(BlogPost::class);
         $items = $repository->findAll();
 
-//        return new JsonResponse(
+        // return new JsonResponse(
         return $this->json(
             [
                 'page' => $page,
@@ -57,7 +57,7 @@ class BlogController extends AbstractController
     public function post($post)
     {
 
-//        return new JsonResponse(
+        // return new JsonResponse(
         // It's the same as doing find($id) on repository
         return $this->json($post
         );
@@ -76,8 +76,8 @@ class BlogController extends AbstractController
      */
     public function postBySlug(BlogPost $post)
     {
-//        return new JsonResponse(
-//        $repository = $this->getDoctrine()->getRepository(BlogPost::class)->findOneBy(['slug' => $slug])
+        // return new JsonResponse(
+        // $repository = $this->getDoctrine()->getRepository(BlogPost::class)->findOneBy(['slug' => $slug])
         // It's the same as doing findByOne(['slug' => contents of {slug}]) on repository
         return $this->json($post);
 
