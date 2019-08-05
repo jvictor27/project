@@ -10,4 +10,4 @@
 * Criptografia da senha do usuário
 * Nível de acesso de usuário
 
-![alt text](https://drive.google.com/open?id=1-XZX-2L1lDyQGTnukdatrUX9Jwq3Vl22)
+https://drive.google.com/open?id=1-XZX-2L1lDyQGTnukdatrUX9Jwq3Vl22
